@@ -1,0 +1,542 @@
+atex\documentclass[10pt,slidestop,compress,mathserif]{beamer}
+\usepackage{setspace}
+\usepackage{amssymb,latexsym,amsmath,graphics}
+\usepackage{pstricks}
+\usepackage{epsfig,epsf,amsfonts}
+%\usepackage{amsfonts}
+%\usepackage{amssymb,amsmath,tabularx,graphicx,float,enumitem}
+%\usepackage{graphicx}
+\usepackage{bm}
+%\usepackage{marginnote}
+\usepackage{color}
+\usepackage{stmaryrd}
+
+%\usepackage{color,multicol,colordvi,graphicx,multirow}
+%\usepackage{fancyhdr}
+%% \pagestyle{fancy}
+
+\usepackage{tikz}
+
+\newcommand{\abs}[1]{\left\lvert{#1}\right\rvert}
+\newcommand{\norm}[1]{\left\lVert{#1}\right\rVert}
+\newcommand{\snorm}[1]{\left[{#1}\right]}
+\newcommand{\supp}[1]{\text{supp}(#1)}
+\newcommand{\p}{\partial}
+\newcommand{\D}[2]{\frac{d{#1}}{d{#2}}}
+\newcommand{\PD}[2]{\frac{\p{#1}}{\p{#2}}}
+\newcommand{\PDD}[3]{\frac{\p^{#1}{#2}}{\p{#3}^{#1}}}
+\newcommand{\pderiv}[1]{\frac{\partial}{\partial #1}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\LN}{\left\|}
+\newcommand{\RN}{\right\|}
+\newcommand{\paren}[1]{\left({#1}\right)}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand{\diff}{\triangle}
+\newcommand{\trl}{\mc{T}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\wh}[1]{\widehat{#1}}
+\newcommand{\mbs}{\mathbb{S}^1}
+\newcommand{\jump}[1]{\llbracket{#1}\rrbracket}
+\newcommand{\dual}[2]{\langle{#1},{#2}\rangle}
+\newcommand{\mb}[1]{\vec{#1}}
+\newcommand{\at}[2]{\left.{#1}\right|_{#2}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\mbr}{\mathbb{R}}
+\newcommand{\braces}[1]{\left\{#1\right\}}
+\newcommand{\Nul}{\text{Nul}}
+\newcommand{\Col}{\text{Col}}
+\newcommand{\row}{\text{row}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\Span}{\text{span}}
+%\newcommand{\bmv}{\bm{v}}
+%\newcommand{\vecu}{\vec{u}}
+%\newcommand{\vecz}{\vec{z}}
+%\newcommand{\vecx}{\vec{x}}
+\newcommand{\mcb}{\mathcal{B}}
+\newcommand{\proj}{\text{proj}}
+\newcommand{\vect}[1]{\langle #1\rangle}
+
+\mode<presentation>
+{
+  %\usetheme{Boadilla}
+  %\usecolortheme{seahorse}
+  % or ...
+
+  %\setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+
+\usepackage[english]{babel}
+% or whatever
+
+\usepackage[latin1]{inputenc}
+% or whatever
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+
+\title[Chapter 1] % (optional, use only with long paper titles)
+{Ordinary Differential Equations}
+
+\subtitle{MATH 2306 / Fall 2025} % (optional)
+
+\author{Dr. Dhruba R. Adhikari\\[3ex]Professor of Mathematics\\[5ex]
+	Kennesaw State University}
+
+
+
+
+
+\date{August 19, 2025}
+
+
+
+
+
+
+\begin{document}	
+	
+	\frame{\titlepage}
+	
+	\begin{frame}{About me ...}
+\setstretch{1.5}
+		\begin{itemize}
+			\item B.Sc. in Mathematics with concentration in Physics from Tribhuvan University, Nepal
+			\item M.Sc. in Mathematics from Tribhuvan University, Nepal
+			\item Post-graduate Diploma in Mathematics from ICTP, Italy
+			\item Ph.D. (2007) in Mathematics from University of South Florida
+			\item Research areas: Differential Equaitions (Ordinary \& Partial),  Functional Analysis, Topological Methods
+			\item This is my 15th year at KSU.
+			\item Love teaching Calculus, Linear Algebra, Differential Equations (ODEs and PDEs), Analysis, Topology, Abstract Algebra
+			
+		
+		\end{itemize}
+	\end{frame}
+\begin{frame}{Syllabus and more...}
+	\begin{itemize}
+		\item Read the syllabus thoroughly and be fully aware of the course policies, exam dates, and  resources available on campus.
+	\item I expect that you read sections of the textbook ahead of time since there will not be enough time to cover everything  from each entire section in its enitirity.
+	\item  Utilize online resources when needed.
+
+	\end{itemize}
+
+	\vfill
+Chapter 1: Introduction to Differential Equations
+\begin{enumerate}
+	\item[$\S 1.1$] Definitions and Terminology
+		\item[$\S 1.2 $] Initial-Value Problems
+			\item[$\S 1.3 $] Differential Equations as Mathematical Models
+		
+\end{enumerate}
+	\vfill
+\end{frame}
+
+\begin{frame}{Review}
+
+
+
+What function, when differentiated,
+\begin{enumerate}
+		\item   results in the function $3x^2$?
+		\vfill
+	\item does not change?
+		\vfill
+	\item doubles?
+		\vfill
+	\item changes sign?
+\end{enumerate}
+	\vfill
+What function, when differentiated twice, changes sign?
+\end{frame}
+
+\begin{frame}
+	In this course, we will make use of the following skills from  prerequisite courses:
+	\begin{enumerate}
+		\item algebraic computations
+			\item properties of logarithmic and exponential functions
+		\item partial fraction decomposition
+		\item basic trigonometric identities
+			\item geometric and physical meaning of derivatives (first order, second order, third order, etc...)
+					\item techniques of evaluating limits, derivatives, and integrals 
+					
+		
+	\end{enumerate}
+\end{frame}
+
+%%
+\begin{frame}{Introduction to Differential Equations} 
+	A significant portion of College Algebra and Pre-calculus is dedicated to solving algebraic equations. For example,
+	\begin{enumerate}
+		\item linear equations: $257 x+13= 71$
+		\item quadratic equations: $x^2- 7x+12 =0$
+		\item trigonometric equations: $\sin\theta +\cos\theta = \sqrt 2$
+		\item  exponential/logarithmic equations: \\$e^{2x} -8e^x + 16=0,$ $\log(x) + \log(x+1) = 1$
+		\end{enumerate}
+	
+\end{frame}
+
+
+\begin{frame}{Ordinary Differential Equations (ODEs)}
+	An ordinary differential equation involves derivatives. For example, 
+	\begin{enumerate}
+		\item $y'(x) = y(x)$
+		\item $\dfrac{dy}{dx} = y^2+3x$
+		\item $y''(x)+3y'(x)-2y(x) =0$
+	\end{enumerate}
+\vfill
+	There are also partial differential equations (PDEs) which involve partial derivatives.
+	\vfill
+	DEs equations arise naturally in the modeling of so many phenomena:
+	\begin{itemize}
+		\item  Newton's law
+		\item Population growth/decay
+		\item Navier-Stokes equations in fluid mechanics
+		\item Schrodinger's equations in quantum physics and chemistry
+		\item Maxwell's equations in electromagnetism
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\begin{definition}
+		An \textbf{ordinary differential equation (ODE)} has exactly one independent variable. A \textbf{partial differential equation (PDE)} has two or more independent variables. 
+	\end{definition}
+Examples: 
+	\begin{itemize}
+		\item $ 2 \dfrac{d^2y}{dt^2} +\dfrac{dy}{dt} += t$ 
+		\item $\dfrac{\partial y}{\partial t} = \dfrac{\partial^2 y}{\partial x^2}$ 
+			\end{itemize}
+
+\end{frame}
+%%%
+
+\begin{frame}{Classification of Differential Equations}
+
+
+	\begin{definition}
+		The \textbf{order} of a differential equation is the highest order derivative appearing anywhere in the equation. 
+	\end{definition} 
+	
+	\begin{examples}
+		%Again via  \includegraphics[height=4\fontcharht\font`\B]{chat_blast}!
+		\begin{itemize}
+			\item $\dfrac{dy}{dx}=y^2+3x$  
+			\item $y'''+(y')^4 = x^3$ 
+			\item $\dfrac{\partial y}{\partial t} = \dfrac{\partial^2 y}{\partial x^2}$  
+		\end{itemize}
+	\end{examples}
+\end{frame}
+
+\begin{frame}{Linearity}
+	\begin{definition}
+		An $n$-th order ODE is called \textbf{linear} if it can be written in the form
+		\[a_n(x) \dfrac{d^n y}{dx^n} + a_{n-1}(x) \dfrac{d^{n-1}y}{dx^{n-1}} + \cdots +a_1(x) \dfrac{dy}{dx} + a_0(x)y(x) =g(x)\] \\
+		Equivalently, 
+		\[a_n(x) \;y^{(n)} + a_{n-1}(x) \;y^{(n-1)} + \cdots +a_1(x) \;y' + a_0(x)\;y =g(x)\]
+		
+	\end{definition}
+
+
+
+
+\end{frame}
+
+\begin{frame} {Activity}
+	
+	\small{Decide if the following equations are linear or nonlinear:}
+	
+	\begin{examples}
+		\begin{itemize}
+			\item $y'' +4y =0$ \\
+			\item $t^2 \dfrac{d^2x}{dt^2} +2t \dfrac{dx}{dt} -x = e^t$\\
+			\item $y''' +(y')^4 = x^3$\\
+			\item $u'' +u'=\cos(u)$
+		\end{itemize}
+	\end{examples}
+\end{frame}
+
+
+
+
+\begin{frame}{Solution to an ODE}
+
+\end{frame}
+
+\begin{frame}{Verification of Solutions}
+Verify that the indicated function is a solution of the given differential equation on the interval $(-\infty, \infty).$
+\begin{examples}
+	\begin{itemize}
+	\item $\dfrac{dy}{dx}= x y^{1/2}$; \quad $y= \dfrac{1}{16}x^4$	
+	\vspace{1in}
+	
+	\item[Activity] $y''-2y'+y =0;$ \quad $y = x e^x$
+		\end{itemize}
+\end{examples}
+	\vfill
+\end{frame}
+
+
+
+\begin{frame}{Solution Curve}
+	\vfill
+Graph of a solution vs graph of a function!
+ODE: $xy'+y = 0$; $y = 1/x$.
+\vfill
+\end{frame}
+
+
+\begin{frame}{Explicit and Implicit Solutions}
+	\vfill
+	\textbf{Verification of an Implicit Solution:}
+	ODE: $\dfrac{dy}{dx} = -\dfrac{x}{y}; \quad x^2 +y^2 = 16.$ Indicate an interval of definition.
+\end{frame}
+
+\begin{frame}{Families of Solutions}
+	\begin{example}
+		\begin{itemize}
+			\item $xy'-y= x^2 \sin x; \quad  y = Cx- x\cos x.$
+		\end{itemize}
+		
+	\begin{figure}
+		\includegraphics[width=0.4\linewidth]{solution-family}
+	\end{figure}
+	\end{example}
+\end{frame}
+
+\begin{frame}
+	\begin{example}
+	\begin{itemize}
+		\item $y''-2y'+y=0; \quad  y = C_1e^x+C_2xe^x.$
+	\end{itemize}
+	
+\begin{figure}
+	\includegraphics[width=0.4\linewidth]{solution-family2}
+\end{figure}
+\end{example}
+\end{frame}
+
+\begin{frame}
+	The one-parameter family  $y = D x^4$, $D$ being a parameter,  is an explicit solution of the linear first-order equation 
+	$$xy'- 4y = 0.$$
+		on the interval $(-\infty, \infty)$.
+	\vfill
+Discuss some solutions  of the ODE defined on $(-\infty, \infty)$ and passing through $(0, 0).$
+\vfill
+	
+\end{frame}
+
+\begin{frame}{Activity}
+Match each differential equation to a function which is a solution.\\
+\vspace{.25in}
+\begin{tabular}{|l|l|}
+	\hline
+1. $y'' + 11 y' + 28 y = 0$	& A. $y= 3x+x^2$ \\
+	\hline
+2. $y'=3y$	&  B. $y= e^{-4x}$ \\
+	\hline
+3. $xy'-y=x^2$	& C.  $y= \sin (x)$ \\
+	\hline
+4. $2x^2y''+3xy'=y$	& D. $y = x^{1/2}$ \\
+	\hline
+	&E. $y= 2 e^{3x}$  \\
+	\hline
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{\S1.2 Initial-Value Problems}
+
+\end{frame}
+
+
+\begin{frame}
+	\begin{definition}
+		An initial value problem consists of an ODE with a certain type of additional conditions. We wish to solve
+		\[ \dfrac{d^ny}{dx^n} = f(x,y,y', ..., y^{(n-1)})\]
+		subject to initial conditions
+		\[ y(x_0)=y_0, \; y'(x_0)=y_1, ..., \; y^{(n-1)}(x_0)=y_{n-1}\]
+		This problem is called an \textbf{initial-value problem (IVP)}.
+	\end{definition}
+\end{frame}
+
+
+\begin{frame}{Simple cases}
+	First order:\\
+	\[ \dfrac{dy}{dx} = f(x,y), \quad y(x_0)=y_0\]
+	We see that $y$ satisfies the ODE and its graph passes through the point $(x_0, y_0)$. 
+	
+	\vfill
+	Second order: \\
+	\[\dfrac{d^2 y}{dx^2} = f(x,y,y'), \quad y(x_0)=y_0, \quad y'(x_0) = y_1\]
+	If $y$ is the position of a particle at time $x$, the ODE describes acceleration, and $y_0$ is the initial position, and $y_1$ is the initial velocity. 
+	
+\end{frame}
+
+\begin{frame}{Example}
+	Given that $y=c_1x + \dfrac{c_2}{x}$ solves $x^2 y'' +xy'-y=0$, solve the IVP
+	\[ x^2 y'' +xy' -y=0, \quad y(1)=1, \quad y'(1) = 3\] 
+	
+	%(Insert your work here...and you get to):
+	
+\end{frame}
+
+\begin{frame}{Example}
+	Given that $y=c_1 \cos 4t +c_2 \sin 4t$ solves $x''+16x=0$, solve the IVP
+	\[ x''+16x=0, \quad x(\pi/2)=-2, \quad x'(\pi/2) = 1\] 
+	
+	%(Insert your work here...and you get to):
+	
+\end{frame}
+
+
+
+\begin{frame}{Theorem on Existence and Uniqueness}
+	\begin{theorem}
+		For the IVP
+		\[ y'(x) = f(x,y), \quad y(x_0)=y_0\]
+		if $f$ and $\dfrac{\partial f}{\partial y}$ are continuous on some rectangle
+		\[ R =\left\{ (x,y): a<x<b, \; c<y<d\right\}\]
+		that contains the point $(x_0, y_0)$, then the IVP has a unique solution $\phi(x)$ in some interval $x_0 -\delta < x< x_0+\delta$ for some positive number $\delta$. 
+	\end{theorem}
+	
+\end{frame}
+
+\begin{frame}
+	\begin{example}
+		Show that $y(x) = Ce^{4x} -3$ solves 
+		\[\dfrac{dy}{dx} = 4y+12\]
+		for any value of the constant $C$. Note there are infinitely many  solutions. 
+	\end{example}
+
+Find the solution that passes through $(1, 1).$
+\end{frame}
+
+
+\begin{frame} {An IVP with several solutions}
+	$$\dfrac{dy}{dx}= x y^{1/2}; \qquad y(0) = 0$$
+\end{frame}
+\begin{frame}{Existence of a Unique Solution of an IVP}
+If $\dfrac{\partial f}{\partial y}$ is continuous on some rectangle
+\[ R =\left\{ (x,y): a<x<b, \; c<y<d\right\}\]
+that contains the point $(x_0, y_0)$, then the IVP has a unique solution $\phi(x)$ in some interval $x_0 -\delta < x< x_0+\delta$ for some positive number $\delta$. 
+
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\includegraphics[width=0.6\linewidth]{solution-family3}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{\S 1.3 Differential Equations as Mathematical Models}
+	\begin{figure}
+		\includegraphics[width=0.7\linewidth]{modeling-steps}
+	\end{figure}
+
+	
+\begin{itemize}
+	\item Population Growth (Thomas Malthus, 1798)
+	\item Radioactive Decay
+	\item Newton's Law of Cooling
+	\item Spread of a Disease
+	\item Mixtures
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Population Growth}
+
+
+
+\end{frame}
+\begin{frame}{Radioactive Decay}
+	
+	
+	
+\end{frame}
+
+\begin{frame}
+\textbf{Ex 1:} Under the same assumptions that underlie the Malthusian model, 
+\begin{enumerate}
+	\item[(i)] determine a differential equation for the population  $P(t)$ of a country when individuals are allowed to immigrate into the country at a constant rate $r>0$, and 
+	\item[(ii)] determine a differential equation  for the population $P(t)$ of the country when individuals are allowed to emigrate from the country at a constant rate $r>0$.
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}
+
+\textbf{Ex 2:} The Malthusian population model fails to take death into consideration; the growth rate equals the birth rate. In another model of a changing population of a community it is assumed that the rate at which the population changes is a net rate, that is, the difference between the rate of births and the rate of deaths in the community.
+
+\vspace{.15in}
+Determine a model for the population $P(t)$ if both the birth rate and the death rate are proportional to the population present at time $t$.	
+\end{frame}
+
+\begin{frame}
+\textbf{Ex. 3:}	Using the concept of net rate introduced in \textbf{Ex. 2}, determine a model for a population  if the birth rate is proportional to the population present at time  $t$ but the death rate is proportional to the square of the population present at time $t$.
+\end{frame}
+
+
+\begin{frame}
+\textbf{Ex. 4:}	Modify the model in \textbf{Ex. 3} for net rate at which the population  of a certain kind of fish changes by also assuming that the fish are harvested at a constant rate $h$.
+\end{frame}
+
+\begin{frame}{Newton's Law of Cooling}
+			
+			
+			
+\end{frame}
+
+\begin{frame}{Spread of a Disease}
+	
+	
+	
+\end{frame}
+	
+\begin{frame}
+	\textbf{Ex:} Suppose a student carrying a flu virus returns to an isolated college campus of  1000 students. Determine a differential equation for the number $x(t)$ of people  who have contracted the flu if the rate at which the disease spreads is proportional to the number of interactions between the number of students who have the flu and the number of students who have not yet been exposed to it.
+\end{frame}	
+	
+\begin{frame}{Mixtures}
+	Let us suppose that a large mixing tank initially holds 300 gallons of brine (that is, water in which a certain number of pounds of salt has been dissolved). Another brine solution is pumped into the large tank at a rate of 3 gallons per minute; the concentration of the salt in this inflow is 2 pounds per gallon. When the solution in the tank is well stirred, it is pumped out at the same rate as the entering solution. 
+\begin{figure}
+	\includegraphics[width=0.4\linewidth]{mixtures}
+\end{figure}
+
+\end{frame}	
+
+\begin{frame}
+\begin{figure}
+	\includegraphics[width=0.4\linewidth]{mixtures}
+\end{figure}
+
+
+\textbf{Modeling Question:} Write down a differential equation for the rate of change of the amount of salt $A(t)$ measure in pounds in the tank at time time $t$. 
+
+
+\vspace{1in}
+	
+\end{frame}	
+	
+\begin{frame}
+\textbf{Ex:}	Suppose that a large mixing tank initially holds 300 gallons of water in which 50 pounds of salt have been dissolved. Another brine solution is pumped into the tank at a rate of  3 gal/min, and when the solution is well stirred, it is then pumped out at a slower rate of  2 gal/min. If the concentration of the solution entering is 2 lb/gal, determine a differential equation for the amount of salt $A(t)$  in the tank at time $t>0$. 
+\end{frame}
+
+
+\begin{frame}
+\textbf{Ex:}	What is the DE in the above exercise  if the well-stirred  solution pumped out a faster rate  of 3.5 gal/min? 
+\end{frame}
+
+
+
+
+
+
+
+
+
+\end{document}
